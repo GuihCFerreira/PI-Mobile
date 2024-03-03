@@ -1,4 +1,4 @@
-package com.example.projetopi4semestre.view.fragment.history.umidade;
+package com.example.projetopi4semestre.view.fragment.login.create;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -13,26 +13,25 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.projetopi4semestre.R;
-import com.example.projetopi4semestre.databinding.FragmentUmidadeHistoricoBinding;
+import com.example.projetopi4semestre.databinding.FragmentCreateUserBinding;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
-public class UmidadeHistoricoFragment extends Fragment {
+public class CreateUserFragment extends Fragment {
 
-    private UmidadeHistoricoViewModel mViewModel;
-    private FragmentUmidadeHistoricoBinding binding;
+    private CreateUserViewModel mViewModel;
+    private FragmentCreateUserBinding binding;
 
-    public static UmidadeHistoricoFragment newInstance() {
-        return new UmidadeHistoricoFragment();
+    public static CreateUserFragment newInstance() {
+        return new CreateUserFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        binding= FragmentUmidadeHistoricoBinding.inflate(inflater, container, false);
-        mViewModel = new ViewModelProvider(this).get(UmidadeHistoricoViewModel.class);
-
+        binding= FragmentCreateUserBinding.inflate(inflater, container, false);
+        mViewModel = new ViewModelProvider(this).get(CreateUserViewModel.class);
         return binding.getRoot();
     }
 

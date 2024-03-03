@@ -35,5 +35,9 @@ public class HistoricoFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_historico, container, false);
     }
 
-
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

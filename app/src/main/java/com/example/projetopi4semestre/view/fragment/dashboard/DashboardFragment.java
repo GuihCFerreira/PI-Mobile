@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.projetopi4semestre.R;
+import com.example.projetopi4semestre.databinding.FragmentDashboardBinding;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -20,6 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel mViewModel;
+    private FragmentDashboardBinding  binding;
 
     public static DashboardFragment newInstance() {
         return new DashboardFragment();
@@ -28,14 +30,14 @@ public class DashboardFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_dashboard, container, false);
+        binding = FragmentDashboardBinding.inflate(inflater,container, false);
+        mViewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
+        return binding.getRoot();
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
-        // TODO: Use the ViewModel
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
-
 }
