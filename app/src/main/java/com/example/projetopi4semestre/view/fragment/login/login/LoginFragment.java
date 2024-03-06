@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,7 @@ public class LoginFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentLoginBinding.inflate(inflater, container, false);
         mViewModel= new ViewModelProvider(this).get(LoginViewModel.class);
+        configurarEventosPadrao();
         return binding.getRoot();
     }
 
@@ -40,5 +42,17 @@ public class LoginFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public void configurarEventosPadrao(){
+
+        binding.buttonSignin.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(LoginFragmentDirections.actionLoginFragmentToAuthUserFragment());
+        });
+
+        binding.buttonCreateUser.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(LoginFragmentDirections.actionLoginFragmentToCreateUserFragment());
+        });
+
     }
 }

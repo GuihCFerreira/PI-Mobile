@@ -14,17 +14,17 @@
         android:src="@drawable/logo_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintVertical_bias="0.102" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="302dp"
+        android:layout_marginTop="388dp"
         android:text="Seja bem vindo ao"
+        android:fontFamily="@font/poppins"
         android:textColor="@color/white"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,30 +37,38 @@
         android:layout_height="wrap_content"
         android:text="thermometer!"
         android:textColor="@color/white"
+        android:fontFamily="@font/poppins"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="200dp"
+        android:id="@+id/buttonSignin"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
+        android:fontFamily="@font/poppins"
+        android:textSize="18dp"
         android:backgroundTint="@color/colorPrimary"
         android:text="Login"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="200dp"
+        android:id="@+id/buttonCreateUser"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
         android:backgroundTint="@color/colorAcent"
         android:text="Sign In"
+        android:fontFamily="@font/poppins"
+        android:textSize="18dp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignin" />
 </androidx.constraintlayout.widget.ConstraintLayout>
