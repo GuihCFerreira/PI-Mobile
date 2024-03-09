@@ -45,12 +45,12 @@
 
     <Button
         android:id="@+id/buttonSignin"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
+        android:background="@drawable/bg_btn_primary"
         android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
         android:fontFamily="@font/poppins"
         android:textSize="18dp"
-        android:backgroundTint="@color/colorPrimary"
         android:text="Login"
         android:textStyle="bold"
         android:textColor="@color/white"
@@ -60,11 +60,12 @@
 
     <Button
         android:id="@+id/buttonCreateUser"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="278dp"
+        android:layout_height="50dp"
         android:layout_marginTop="17dp"
-        android:backgroundTint="@color/colorAcent"
+        android:background="@drawable/bg_btn_acent"
         android:text="Sign In"
+        android:textStyle="bold"
         android:fontFamily="@font/poppins"
         android:textSize="18dp"
         android:textColor="@color/white"

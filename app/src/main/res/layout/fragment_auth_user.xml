@@ -45,14 +45,16 @@
 
     <Button
         android:id="@+id/buttonLogin"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="68dp"
-        android:backgroundTint="@color/colorPrimaryLight"
+        android:background="@drawable/bg_btn_primary"
+        android:backgroundTint="@color/colorAcent"
         android:fontFamily="@font/poppins"
         android:text="Entrar"
         android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textSize="24dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -100,9 +102,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editEmailLogin"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/fira_code"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -121,9 +123,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editSenhaLogin"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/fira_code"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
