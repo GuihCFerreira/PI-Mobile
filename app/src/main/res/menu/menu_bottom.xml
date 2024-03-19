@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/idMenuHome"
+        android:icon="@drawable/ic_home"
+        android:title="Home"
+        android:iconTint="@color/colorPrimaryDark"/>
+    <item
+        android:id="@+id/idMenuDashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Dashboard"
+        android:iconTint="@color/colorPrimaryDark"
+        />
+    <item
+        android:id="@+id/idMenuHistory"
+        android:icon="@drawable/ic_history"
+        android:title="Histórico"
+        android:iconTint="@color/colorPrimaryDark"/>
+    <item
+        android:id="@+id/idMenuUser"
+        android:icon="@drawable/ic_user"
+        android:title="Perfil"
+        android:iconTint="@color/colorPrimaryDark"/>
+</menu>

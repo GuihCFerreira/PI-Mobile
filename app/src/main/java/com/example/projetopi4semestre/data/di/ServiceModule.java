@@ -2,6 +2,7 @@ package com.example.projetopi4semestre.data.di;
 
 import com.example.projetopi4semestre.data.remote.service.TemperaturaService;
 import com.example.projetopi4semestre.data.remote.service.UmidadeService;
+import com.example.projetopi4semestre.data.remote.service.UsuarioService;
 
 import javax.inject.Singleton;
 
@@ -26,5 +27,11 @@ public class ServiceModule {
     public static UmidadeService provideUmidadeService(Retrofit retrofit){
         return retrofit.create(UmidadeService.class);
     }
+    @Provides
+    @Singleton
+    public static UsuarioService provideUsuarioService(Retrofit retrofit){
+        return retrofit.create(UsuarioService.class);
+    }
+
 
 }

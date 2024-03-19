@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,8 @@ public class AuthUserFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentAuthUserBinding.inflate(inflater, container, false);
         mViewModel = new ViewModelProvider(this).get(AuthUserViewModel.class);
+        binding.buttonLogin.setOnClickListener(v -> Navigation.findNavController(v).navigate(AuthUserFragmentDirections.actionAuthUserFragmentToHomeFragment()));
+
         return binding.getRoot();
     }
 
