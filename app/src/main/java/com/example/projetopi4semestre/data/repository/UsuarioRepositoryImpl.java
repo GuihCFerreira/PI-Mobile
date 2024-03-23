@@ -1,6 +1,9 @@
 package com.example.projetopi4semestre.data.repository;
 
 import com.example.projetopi4semestre.data.remote.dto.UsuarioDto;
+import com.example.projetopi4semestre.data.remote.parametros.ParametrosCriarUsuario;
+import com.example.projetopi4semestre.data.remote.parametros.ParametrosLogarUsuario;
+import com.example.projetopi4semestre.data.remote.parametros.ParametrosTrocarSenha;
 import com.example.projetopi4semestre.data.remote.service.UsuarioService;
 import com.example.projetopi4semestre.domain.repository.UsuarioRepository;
 
@@ -19,17 +22,17 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
 
 
     @Override
-    public Call<UsuarioDto> loginUser(String email, String senha) {
-        return usuarioService.loginUser(email, senha);
+    public Call<UsuarioDto> loginUser(ParametrosLogarUsuario parametrosLogarUsuario) {
+        return usuarioService.loginUser(parametrosLogarUsuario );
     }
 
     @Override
-    public Call<UsuarioDto> createUser(String nome, String email, String senha) {
-        return usuarioService.createUser(nome, email, senha);
+    public Call<UsuarioDto> createUser(ParametrosCriarUsuario parametrosCriarUsuario) {
+        return usuarioService.createUser(parametrosCriarUsuario);
     }
 
     @Override
-    public Call<UsuarioDto> resetPassword( String email, String senhaAtual, String senhaNova) {
-        return usuarioService.resetPassword( email, senhaAtual, senhaNova);
+    public Call<UsuarioDto> resetPassword(ParametrosTrocarSenha parametrosTrocarSenha) {
+        return usuarioService.resetPassword( parametrosTrocarSenha);
     }
 }

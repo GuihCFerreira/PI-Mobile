@@ -2,6 +2,8 @@ package com.example.projetopi4semestre.view.fragment.user;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.projetopi4semestre.R;
+import com.example.projetopi4semestre.constants.Strings;
 import com.example.projetopi4semestre.databinding.FragmentUserBinding;
 
 import dagger.hilt.android.AndroidEntryPoint;
@@ -32,6 +35,7 @@ public class UserFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentUserBinding.inflate(inflater, container, false);
         mViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        configurarUI();
         return binding.getRoot();
     }
 
@@ -39,5 +43,20 @@ public class UserFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void configurarUI(){
+
+        SharedPreferences preferences = getActivity().getSharedPreferences(Strings.KEY_SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        String nomeUsuario = preferences.getString(Strings.KEY_USER_NAME,"Nome Usuário");
+        String emailUsuario = preferences.getString(Strings.KEY_USER_EMAIL,"Email Usuário");
+
+        String[] partesNome = nomeUsuario.split(" ");
+        String nomeImagem = partesNome[0] + partesNome[partesNome.length -1];
+
+        binding.tvInicialUser.setText(nomeImagem);
+        binding.tvEmail.setText(emailUsuario);
+        binding.tvNome.setText(nomeUsuario);
+
     }
 }

@@ -46,13 +46,12 @@ public class LoginFragment extends Fragment {
 
     public void configurarEventosPadrao(){
 
-        binding.buttonSignin.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(LoginFragmentDirections.actionLoginFragmentToAuthUserFragment());
-        });
+        binding.buttonSignin.setOnClickListener(v ->
+                Navigation.findNavController(v).navigate(LoginFragmentDirections.actionLoginFragment2ToAuthUserFragment2())
+        );
 
-        binding.buttonCreateUser.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(LoginFragmentDirections.actionLoginFragmentToCreateUserFragment());
-        });
-
+        binding.buttonCreateUser.setOnClickListener(v ->
+            Navigation.findNavController(v).navigate(LoginFragmentDirections.actionLoginFragment2ToCreateUserFragment2())
+        );
     }
 }

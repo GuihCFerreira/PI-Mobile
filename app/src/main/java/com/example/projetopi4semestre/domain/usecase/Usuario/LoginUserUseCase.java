@@ -1,6 +1,7 @@
 package com.example.projetopi4semestre.domain.usecase.Usuario;
 
 import com.example.projetopi4semestre.data.remote.dto.UsuarioDto;
+import com.example.projetopi4semestre.data.remote.parametros.ParametrosLogarUsuario;
 import com.example.projetopi4semestre.data.remote.resposnse.CustomCallback;
 import com.example.projetopi4semestre.data.remote.resposnse.CustomResponse;
 import com.example.projetopi4semestre.data.remote.resposnse.RequestCallback;
@@ -20,9 +21,9 @@ public class LoginUserUseCase {
         this.repository = repository;
     }
 
-    public void loginUser(String email, String senha){
+    public void loginUser(ParametrosLogarUsuario parametrosLogarUsuario){
         requestCallback.carregando(true);
-        repository.loginUser(email, senha).enqueue(new CustomCallback<>(new UseCaseCallback<UsuarioDto>() {
+        repository.loginUser(parametrosLogarUsuario).enqueue(new CustomCallback<>(new UseCaseCallback<UsuarioDto>() {
             @Override
             public void onSuccess(UsuarioDto response) {
                 requestCallback.carregando(false);

@@ -1,6 +1,7 @@
 package com.example.projetopi4semestre.domain.usecase.Usuario;
 
 import com.example.projetopi4semestre.data.remote.dto.UsuarioDto;
+import com.example.projetopi4semestre.data.remote.parametros.ParametrosCriarUsuario;
 import com.example.projetopi4semestre.data.remote.resposnse.CustomCallback;
 import com.example.projetopi4semestre.data.remote.resposnse.CustomResponse;
 import com.example.projetopi4semestre.data.remote.resposnse.RequestCallback;
@@ -20,11 +21,9 @@ public class CreateUserUseCase {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public void createUser(String nome, String email, String senha){
+    public void createUser(ParametrosCriarUsuario parametrosCriarUsuario){
         requestCallback.carregando(true);
-        usuarioRepository.createUser(
-                email, nome, senha
-        ).enqueue(new CustomCallback<>(new UseCaseCallback<UsuarioDto>() {
+        usuarioRepository.createUser(parametrosCriarUsuario).enqueue(new CustomCallback<>(new UseCaseCallback<UsuarioDto>() {
             @Override
             public void onSuccess(UsuarioDto response) {
                 requestCallback.carregando(false);

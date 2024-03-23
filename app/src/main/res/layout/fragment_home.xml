@@ -12,13 +12,14 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvUmidade"
         android:layout_width="354dp"
-        tools:listitem="@layout/adapter_umidade"
-        tools:itemCount="1"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.375"
+        tools:itemCount="1"
+        tools:listitem="@layout/adapter_umidade" />
 
     <ImageView
         android:id="@+id/imageViewRefresh"
@@ -36,14 +37,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="314dp" />
+        app:layout_constraintGuide_begin="254dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="584dp" />
+        app:layout_constraintGuide_begin="546dp" />
 
     <TextView
         android:id="@+id/textView7"
@@ -129,5 +130,16 @@
         app:layout_constraintTop_toTopOf="@+id/guideline"
         tools:itemCount="1"
         tools:listitem="@layout/adapter_temperatura"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

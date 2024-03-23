@@ -1,6 +1,7 @@
 package com.example.projetopi4semestre.domain.usecase.Usuario;
 
 import com.example.projetopi4semestre.data.remote.dto.UsuarioDto;
+import com.example.projetopi4semestre.data.remote.parametros.ParametrosTrocarSenha;
 import com.example.projetopi4semestre.data.remote.resposnse.CustomCallback;
 import com.example.projetopi4semestre.data.remote.resposnse.CustomResponse;
 import com.example.projetopi4semestre.data.remote.resposnse.RequestCallback;
@@ -20,9 +21,9 @@ public class ResetPasswordUseCase {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public void resetPassword(String nome, String email, String senhaAtual, String senhaNova){
+    public void resetPassword(ParametrosTrocarSenha parametrosTrocarSenha){
         requestCallback.carregando(true);
-        usuarioRepository.resetPassword(email,senhaAtual, senhaNova )
+        usuarioRepository.resetPassword(parametrosTrocarSenha )
                 .enqueue(new CustomCallback<>(new UseCaseCallback<UsuarioDto>() {
                     @Override
                     public void onSuccess(UsuarioDto response) {
