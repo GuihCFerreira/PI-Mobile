@@ -34,7 +34,7 @@ public class TemperaturaAtualAdapter extends RecyclerView.Adapter<TemperaturaAtu
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Temperatura temperatura = temperaturaList.get(position);
         holder.binding.tvTemperatura.setText(temperatura.getTemperatura() + " "+ temperatura.getUnidadeMedida());
-        if(Integer.valueOf(temperatura.getTemperatura()) < 17){
+        if(Float.valueOf(temperatura.getTemperatura()) < 17.0){
             holder.binding.tvClima.setText("Clima Frio");
             holder.binding.imageViewClima.setImageResource(R.drawable.adapter_temp_frio);
         }else{
@@ -44,7 +44,7 @@ public class TemperaturaAtualAdapter extends RecyclerView.Adapter<TemperaturaAtu
     }
 
     public void setTemperaturaList(List<Temperatura> temperaturaList){
-        temperaturaList.addAll(temperaturaList);
+        this.temperaturaList.addAll(temperaturaList);
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{

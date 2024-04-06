@@ -27,28 +27,28 @@ public class UmidadeAtualAdapter extends RecyclerView.Adapter<UmidadeAtualAdapte
 
     @Override
     public int getItemCount() {
-        return umidadeList.size();
+        return 1;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Umidade umidade = umidadeList.get(position);
         holder.binding.tvUmidade.setText(umidade.getUmidade() + " " + umidade.getUnidadeMedida());
-        Integer umd = Integer.valueOf(umidade.getUmidade());
-        if (umd < 40){
+        Float umd = Float.valueOf(umidade.getUmidade());
+        if (umd < 40.0){
             holder.binding.imageViewClima.setImageResource(R.drawable.adapter_umd_sol);
-            holder.binding.tvTempo.setText("Tempo seco. Baixa probabilidade");
-        } else if (75 > umd && umd > 40) {
+            holder.binding.tvTempo.setText("Tempo seco.");
+        } else if (75.0 > umd && umd > 40.0) {
             holder.binding.imageViewClima.setImageResource(R.drawable.adapter_umd_nuvem);
-            holder.binding.tvTempo.setText("Tempo úmido.Probabilidade média");
+            holder.binding.tvTempo.setText("Tempo úmido.");
         }else{
             holder.binding.imageViewClima.setImageResource(R.drawable.adapter_umd_raio);
-            holder.binding.tvTempo.setText("Tempo úmida. Alta probabilidade");
+            holder.binding.tvTempo.setText("Tempo úmida.");
         }
     }
 
     public void setUmidadeList(List<Umidade> umidadeList){
-        umidadeList.addAll(umidadeList);
+        this.umidadeList.addAll(umidadeList);
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{

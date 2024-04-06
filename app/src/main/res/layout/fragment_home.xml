@@ -25,10 +25,10 @@
         android:id="@+id/imageViewRefresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="48dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.883"
+        app:layout_constraintHorizontal_bias="0.876"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/refresh" />
 
@@ -37,14 +37,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="254dp" />
+        app:layout_constraintGuide_begin="227dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="546dp" />
+        app:layout_constraintGuide_begin="522dp" />
 
     <TextView
         android:id="@+id/textView7"
@@ -96,13 +96,13 @@
         android:id="@+id/textViewTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/fira_code"
         android:text="Temperatura"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
@@ -126,10 +126,12 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.601"
         tools:itemCount="1"
-        tools:listitem="@layout/adapter_temperatura"/>
+        tools:listitem="@layout/adapter_temperatura" />
 
     <ProgressBar
         android:id="@+id/progressBar2"

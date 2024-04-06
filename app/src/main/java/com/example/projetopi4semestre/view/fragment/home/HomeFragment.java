@@ -22,6 +22,7 @@ import com.example.projetopi4semestre.domain.model.Umidade;
 import com.example.projetopi4semestre.view.adapter.atual.TemperaturaAtualAdapter;
 import com.example.projetopi4semestre.view.adapter.atual.UmidadeAtualAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import dagger.hilt.android.AndroidEntryPoint;
@@ -45,6 +46,7 @@ public class HomeFragment extends Fragment {
         binding= FragmentHomeBinding.inflate(inflater, container, false);
         mViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         mViewModel.getValoresAtuais();
+        observarEstadosPadrao();
         return binding.getRoot();
     }
 
@@ -76,7 +78,10 @@ public class HomeFragment extends Fragment {
         binding.rvUmidade.setLayoutManager(layoutManager);
         binding.rvUmidade.hasFixedSize();
 
-        umidadeAtualAdapter.setUmidadeList((List<Umidade>) umidade);
+        List<Umidade> umidadeList = new ArrayList<>();
+        umidadeList.add(umidade);
+
+        umidadeAtualAdapter.setUmidadeList(umidadeList);
         binding.rvUmidade.setAdapter(umidadeAtualAdapter);
     }
 
@@ -85,7 +90,10 @@ public class HomeFragment extends Fragment {
         binding.rvTemperatura.setLayoutManager(layoutManager);
         binding.rvTemperatura.hasFixedSize();
 
-        temperaturaAtualAdapter.setTemperaturaList((List<Temperatura>) temperatura);
+        List<Temperatura> temperaturaList = new ArrayList<>();
+        temperaturaList.add(temperatura);
+
+        temperaturaAtualAdapter.setTemperaturaList(temperaturaList);
         binding.rvTemperatura.setAdapter(temperaturaAtualAdapter);
     }
 

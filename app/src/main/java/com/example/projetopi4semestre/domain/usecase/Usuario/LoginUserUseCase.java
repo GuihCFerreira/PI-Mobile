@@ -33,7 +33,7 @@ public class LoginUserUseCase {
             @Override
             public void onFailure(CustomResponse customResponse) {
                 requestCallback.carregando(false);
-                requestCallback.erro(customResponse);
+                requestCallback.mensagem(customResponse);
             }
         }));
     }

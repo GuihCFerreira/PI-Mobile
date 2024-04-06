@@ -11,6 +11,9 @@ import com.example.projetopi4semestre.domain.usecase.umidade.GetUmidadeAtualUseC
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
+
+@HiltViewModel
 public class HomeViewModel extends ViewModel {
 
     private HomeViewState viewState = new HomeViewState();
@@ -24,7 +27,8 @@ public class HomeViewModel extends ViewModel {
     }
 
     public void getValoresAtuais(){
-
+        getUmidadeAtual();
+        getTemperaturaAtual();
     }
 
     private void getUmidadeAtual(){
@@ -40,7 +44,7 @@ public class HomeViewModel extends ViewModel {
             }
 
             @Override
-            public void erro(CustomResponse response) {
+            public void mensagem(CustomResponse response) {
                 viewState.getMensagem().setValue(response.getMensagem());
             }
         });
@@ -61,8 +65,8 @@ public class HomeViewModel extends ViewModel {
             }
 
             @Override
-            public void erro(CustomResponse response) {
-                getViewState().getMensagem().setValue(response.getMensagem());
+            public void mensagem(CustomResponse response) {
+                viewState.getMensagem().setValue(response.getMensagem());
             }
         });
 

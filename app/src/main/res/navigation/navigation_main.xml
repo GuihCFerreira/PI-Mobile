@@ -3,65 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_main"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/idMenuHome">
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/idMenuHome"
         android:name="com.example.projetopi4semestre.view.fragment.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_historicoFragment"
-            app:destination="@id/historicoFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_userFragment"
-            app:destination="@id/userFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/historicoFragment"
+        android:id="@+id/idMenuHistory"
         android:name="com.example.projetopi4semestre.view.fragment.history.main.HistoricoFragment"
         android:label="fragment_historico"
-        tools:layout="@layout/fragment_historico" >
-        <action
-            android:id="@+id/action_historicoFragment_to_userFragment"
-            app:destination="@id/userFragment" />
-        <action
-            android:id="@+id/action_historicoFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
-        <action
-            android:id="@+id/action_historicoFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_historico" />
     <fragment
-        android:id="@+id/dashboardFragment"
+        android:id="@+id/idMenuDashboard"
         android:name="com.example.projetopi4semestre.view.fragment.dashboard.DashboardFragment"
         android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" >
-        <action
-            android:id="@+id/action_dashboardFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_dashboardFragment_to_userFragment"
-            app:destination="@id/userFragment" />
-        <action
-            android:id="@+id/action_dashboardFragment_to_historicoFragment"
-            app:destination="@id/historicoFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_dashboard" />
     <fragment
-        android:id="@+id/userFragment"
+        android:id="@+id/idMenuUser"
         android:name="com.example.projetopi4semestre.view.fragment.user.UserFragment"
         android:label="fragment_user"
-        tools:layout="@layout/fragment_user" >
-        <action
-            android:id="@+id/action_userFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
-        <action
-            android:id="@+id/action_userFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_userFragment_to_historicoFragment"
-            app:destination="@id/historicoFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_user" />
 </navigation>

@@ -36,7 +36,7 @@ public class CreateUserViewModel extends ViewModel {
             }
 
             @Override
-            public void erro(CustomResponse response) {
+            public void mensagem(CustomResponse response) {
                 viewState.getMensagem().setValue(response.getMensagem());
             }
         });

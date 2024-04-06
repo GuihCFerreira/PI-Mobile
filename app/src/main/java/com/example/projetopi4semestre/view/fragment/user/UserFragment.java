@@ -52,7 +52,7 @@ public class UserFragment extends Fragment {
         String emailUsuario = preferences.getString(Strings.KEY_USER_EMAIL,"Email Usuário");
 
         String[] partesNome = nomeUsuario.split(" ");
-        String nomeImagem = partesNome[0] + partesNome[partesNome.length -1];
+        String nomeImagem = partesNome[0].substring(0,1) + partesNome[partesNome.length -1].substring(0,1);
 
         binding.tvInicialUser.setText(nomeImagem);
         binding.tvEmail.setText(emailUsuario);
