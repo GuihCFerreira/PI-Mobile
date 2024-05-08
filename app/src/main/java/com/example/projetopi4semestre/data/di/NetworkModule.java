@@ -1,7 +1,5 @@
 package com.example.projetopi4semestre.data.di;
 
-import android.content.Context;
-
 import com.example.projetopi4semestre.MyApplication;
 import com.example.projetopi4semestre.data.remote.interceptor.TokenInterceptor;
 import com.google.gson.Gson;

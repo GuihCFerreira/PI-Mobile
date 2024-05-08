@@ -6,4 +6,5 @@ public class Strings {
     public final static String KEY_USER_NAME = "Nome Usuario";
     public final static String KEY_USER_EMAIL = "Email Usuario";
     public final static String KEY_USER_TOKEN = "Token Usuario";
+    public final static String LINK_DASHBOARD = "https://www.google.com";
 }

@@ -22,7 +22,6 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class LoginFragment extends Fragment {
 
-    private LoginViewModel mViewModel;
     private FragmentLoginBinding binding;
 
     public static LoginFragment newInstance() {
@@ -33,7 +32,6 @@ public class LoginFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentLoginBinding.inflate(inflater, container, false);
-        mViewModel= new ViewModelProvider(this).get(LoginViewModel.class);
         configurarEventosPadrao();
         return binding.getRoot();
     }

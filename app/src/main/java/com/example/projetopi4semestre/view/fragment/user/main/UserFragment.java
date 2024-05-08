@@ -1,8 +1,8 @@
-package com.example.projetopi4semestre.view.fragment.user;
+package com.example.projetopi4semestre.view.fragment.user.main;
 
-import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -14,18 +14,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.projetopi4semestre.R;
 import com.example.projetopi4semestre.constants.Strings;
 import com.example.projetopi4semestre.databinding.FragmentUserBinding;
+import com.example.projetopi4semestre.view.activity.LoginActivity;
+import com.example.projetopi4semestre.view.fragment.user.dialog.UserDialogFragment;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
 public class UserFragment extends Fragment {
 
-    private UserViewModel mViewModel;
+    //private UserViewModel mViewModel;
     private FragmentUserBinding binding;
-
+    private SharedPreferences preferences ;
     public static UserFragment newInstance() {
         return new UserFragment();
     }
@@ -34,8 +35,10 @@ public class UserFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentUserBinding.inflate(inflater, container, false);
-        mViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        //mViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        preferences = getActivity().getSharedPreferences(Strings.KEY_SHARED_PREFERENCES, Context.MODE_PRIVATE);
         configurarUI();
+        configurarEstadosPadrao();
         return binding.getRoot();
     }
 
@@ -47,7 +50,7 @@ public class UserFragment extends Fragment {
 
     private void configurarUI(){
 
-        SharedPreferences preferences = getActivity().getSharedPreferences(Strings.KEY_SHARED_PREFERENCES, Context.MODE_PRIVATE);
+
         String nomeUsuario = preferences.getString(Strings.KEY_USER_NAME,"Nome Usuário");
         String emailUsuario = preferences.getString(Strings.KEY_USER_EMAIL,"Email Usuário");
 
@@ -59,4 +62,28 @@ public class UserFragment extends Fragment {
         binding.tvNome.setText(nomeUsuario);
 
     }
+
+    private void configurarEstadosPadrao(){
+
+        binding.btnLogout.setOnClickListener(v ->{
+
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.clear();
+            editor.apply();
+
+            Intent intent = new Intent(requireActivity(), LoginActivity.class);
+            startActivity(intent);
+            getActivity().finish();
+
+        });
+
+        binding.btnAlterarSenha.setOnClickListener(v->{
+
+            UserDialogFragment userDialogFragment = new UserDialogFragment();
+            userDialogFragment.show(getParentFragmentManager(), userDialogFragment.TAG);
+
+        });
+
+    }
+
 }

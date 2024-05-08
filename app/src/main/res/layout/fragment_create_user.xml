@@ -134,8 +134,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/fira_code"
-                android:textSize="15dp"
-                android:singleLine="true"/>
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textSize="15dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -164,8 +165,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/fira_code"
-                android:textSize="15dp"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:inputType="textPassword"
+                android:textSize="15dp" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 

@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         if(userName != null && userEmail != null && userToken != null){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
+            finish();
         }
 
     }

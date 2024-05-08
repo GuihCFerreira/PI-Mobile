@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_bottom"
-        android:visibility="visible"
-        app:backgroundTint="@color/colorPrimaryLight"/>
+        app:itemBackground="@color/colorPrimaryDarkLight"
+        android:visibility="visible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

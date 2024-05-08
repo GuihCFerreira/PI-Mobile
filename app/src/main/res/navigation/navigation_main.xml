@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/idMenuUser"
-        android:name="com.example.projetopi4semestre.view.fragment.user.UserFragment"
+        android:name="com.example.projetopi4semestre.view.fragment.user.main.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" />
 </navigation>

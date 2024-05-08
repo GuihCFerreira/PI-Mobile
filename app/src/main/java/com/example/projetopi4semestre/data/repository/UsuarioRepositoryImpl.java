@@ -1,5 +1,6 @@
 package com.example.projetopi4semestre.data.repository;
 
+import com.example.projetopi4semestre.data.remote.dto.TokenDto;
 import com.example.projetopi4semestre.data.remote.dto.UsuarioDto;
 import com.example.projetopi4semestre.data.remote.parametros.ParametrosCriarUsuario;
 import com.example.projetopi4semestre.data.remote.parametros.ParametrosLogarUsuario;
@@ -34,5 +35,10 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
     @Override
     public Call<UsuarioDto> resetPassword(ParametrosTrocarSenha parametrosTrocarSenha) {
         return usuarioService.resetPassword( parametrosTrocarSenha);
+    }
+
+    @Override
+    public Call<TokenDto> renewToken() {
+        return usuarioService.renewToken();
     }
 }

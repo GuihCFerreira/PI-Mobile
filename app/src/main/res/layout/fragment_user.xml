@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.user.UserFragment"
+    tools:context=".view.fragment.user.main.UserFragment"
     android:background="@color/colorPrimaryDark">
 
 
@@ -72,27 +72,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
-    <ImageView
-        android:id="@+id/imageView11"
+    <Button
+        android:id="@+id/btnAlterarSenha"
         android:layout_width="220dp"
-        android:layout_height="37dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/bg_btn_primary"
+        android:backgroundTint="@color/colorPrimary"
+        android:fontFamily="@font/poppins"
+        android:text="Alterar senha"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_btn_reset_password"
+        app:iconTint="#000000"
         android:layout_marginTop="52dp"
-        android:src="@drawable/btn_reset_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
-    <ImageView
-        android:id="@+id/btnLogout"
-        android:layout_width="220dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="28dp"
-        android:src="@drawable/btn_logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
 
     <TextView
         android:id="@+id/textView13"
@@ -153,4 +152,25 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/tvNome" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="220dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/bg_btn_primary"
+        android:backgroundTint="@color/colorPrimary"
+        android:fontFamily="@font/poppins"
+        android:text="Encerrar sessão"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_btn_logout"
+        app:iconTint="#000000"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlterarSenha" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

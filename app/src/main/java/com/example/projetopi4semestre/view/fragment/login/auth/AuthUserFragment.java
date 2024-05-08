@@ -93,6 +93,10 @@ public class AuthUserFragment extends Fragment {
                     binding.editSenhaLogin.getText().toString()
             );
         });
+
+        binding.imageView3.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(AuthUserFragmentDirections.actionAuthUserFragment2ToLoginFragment2());
+        });
     }
 
     private void verificarCamposVazios(){
