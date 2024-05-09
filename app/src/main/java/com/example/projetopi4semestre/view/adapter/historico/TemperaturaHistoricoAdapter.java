@@ -28,14 +28,14 @@ public class TemperaturaHistoricoAdapter extends RecyclerView.Adapter<Temperatur
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Temperatura temp = temperaturaList.get(position);
         holder.binding.tvHistData.setText(temp.getData());
-        holder.binding.tvHistData.setText(temp.getHora());
+        holder.binding.tvHistHora.setText(temp.getHora());
         holder.binding.tVHistValor.setText(temp.getTemperatura());
         holder.binding.tVHistMedida.setText(temp.getUnidadeMedida());
     }
 
     @Override
     public int getItemCount() {
-        return temperaturaList.size();
+        return temperaturaList.size() ;
     }
 
     public void setHistoricoTemperatura(List<Temperatura> temperaturaList){

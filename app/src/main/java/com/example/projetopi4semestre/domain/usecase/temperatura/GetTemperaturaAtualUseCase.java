@@ -21,7 +21,7 @@ public class GetTemperaturaAtualUseCase {
     }
 
     public void getTemperaturaAtual(){
-        requestCallback.carregando(true);
+        //requestCallback.carregando(true);
         temperaturaRepository.getTemperturaAtual().enqueue(new CustomCallback<>(new UseCaseCallback<TemperaturaDto>() {
             @Override
             public void onSuccess(TemperaturaDto response) {

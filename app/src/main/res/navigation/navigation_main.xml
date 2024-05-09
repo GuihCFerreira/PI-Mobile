@@ -10,11 +10,6 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/idMenuHistory"
-        android:name="com.example.projetopi4semestre.view.fragment.history.main.HistoricoFragment"
-        android:label="fragment_historico"
-        tools:layout="@layout/fragment_historico" />
-    <fragment
         android:id="@+id/idMenuDashboard"
         android:name="com.example.projetopi4semestre.view.fragment.dashboard.DashboardFragment"
         android:label="fragment_dashboard"
@@ -24,4 +19,9 @@
         android:name="com.example.projetopi4semestre.view.fragment.user.main.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/idMenuHistory"
+        android:name="com.example.projetopi4semestre.view.fragment.history.temperatura.TemperaturaHistoricoFragment"
+        android:label="fragment_temperatura_historico"
+        tools:layout="@layout/fragment_temperatura_historico" />
 </navigation>

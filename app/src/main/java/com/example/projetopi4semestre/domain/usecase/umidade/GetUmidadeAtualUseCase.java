@@ -21,7 +21,7 @@ public class GetUmidadeAtualUseCase {
     }
 
     public void getUmidadeAtual(){
-        requestCallback.carregando(true);
+        //requestCallback.carregando(true);
         repository.getUmidadeAtual().enqueue(new CustomCallback<>(new UseCaseCallback<UmidadeDto>() {
             @Override
             public void onSuccess(UmidadeDto response) {
