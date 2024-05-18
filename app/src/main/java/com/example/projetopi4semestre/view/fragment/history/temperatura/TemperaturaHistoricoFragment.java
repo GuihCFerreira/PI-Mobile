@@ -10,15 +10,18 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.example.projetopi4semestre.R;
 import com.example.projetopi4semestre.databinding.FragmentTemperaturaHistoricoBinding;
 import com.example.projetopi4semestre.view.adapter.historico.TemperaturaHistoricoAdapter;
+import com.example.projetopi4semestre.view.adapter.historico.UmidadeHistoricoAdapter;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -27,6 +30,7 @@ public class TemperaturaHistoricoFragment extends Fragment {
 
     private TemperaturaHistoricoViewModel mViewModel;
     private TemperaturaHistoricoAdapter temperaturaHistoricoAdapter = new TemperaturaHistoricoAdapter();
+    private UmidadeHistoricoAdapter umidadeHistoricoAdapter = new UmidadeHistoricoAdapter();
     private FragmentTemperaturaHistoricoBinding binding;
 
     public static TemperaturaHistoricoFragment newInstance() {
@@ -40,7 +44,7 @@ public class TemperaturaHistoricoFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(TemperaturaHistoricoViewModel.class);
         binding.buttonGoDashboard.setOnClickListener(v -> Toast.makeText(requireActivity(), "TESTE LOGIN", Toast.LENGTH_SHORT).show());
 
-        mViewModel.getTemperaturaHistorico();
+        //mViewModel.getTemperaturaHistorico();
 
         observarEstadosPadrao();
         configurarRecyclerView();
@@ -52,13 +56,25 @@ public class TemperaturaHistoricoFragment extends Fragment {
     private void configurarSpinner(){
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(requireActivity(),R.layout.spinner_item,getResources().getStringArray( R.array.type_array));
         binding.spinnerTipoHistorico.setAdapter(arrayAdapter);
+        binding.spinnerTipoHistorico.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String[] tipoSelecionado = getResources().getStringArray( R.array.type_array);
+                binding.textTipo.setText("De " + tipoSelecionado[position]);
+                if(position ==0) mViewModel.getTemperaturaHistorico(); else mViewModel.getUmidadeHistorico();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     private void configurarRecyclerView(){
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false);
         binding.recyclerViewHistorico.setLayoutManager(layoutManager);
         binding.recyclerViewHistorico.setHasFixedSize(true);
-        binding.recyclerViewHistorico.setAdapter(temperaturaHistoricoAdapter);
     }
 
     private void observarEstadosPadrao(){
@@ -79,7 +95,20 @@ public class TemperaturaHistoricoFragment extends Fragment {
         mViewModel.getViewState().getTemperaturaHistorico().observe(getViewLifecycleOwner(),temperaturas -> {
             if(temperaturas != null){
                 temperaturaHistoricoAdapter.setHistoricoTemperatura(temperaturas);
+                binding.recyclerViewHistorico.setAdapter(temperaturaHistoricoAdapter);
                 configurarRecyclerView();
+            }else{
+                mViewModel.getTemperaturaHistorico();
+            }
+        });
+
+        mViewModel.getViewState().getUmidadeHistorico().observe(getViewLifecycleOwner(), umidades -> {
+            if(umidades != null){
+                umidadeHistoricoAdapter.setUmidadeTemperatura(umidades);
+                binding.recyclerViewHistorico.setAdapter(umidadeHistoricoAdapter);
+                configurarRecyclerView();
+            }else{
+                mViewModel.getUmidadeHistorico();
             }
         });
 
