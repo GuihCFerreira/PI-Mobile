@@ -1,5 +1,6 @@
 package com.example.projetopi4semestre.data.di;
 
+import com.example.projetopi4semestre.data.remote.service.DashboardService;
 import com.example.projetopi4semestre.data.remote.service.TemperaturaService;
 import com.example.projetopi4semestre.data.remote.service.UmidadeService;
 import com.example.projetopi4semestre.data.remote.service.UsuarioService;
@@ -33,5 +34,10 @@ public class ServiceModule {
         return retrofit.create(UsuarioService.class);
     }
 
+    @Provides
+    @Singleton
+    public static DashboardService provideDashboardService(Retrofit retrofit){
+        return retrofit.create(DashboardService.class);
+    }
 
 }
