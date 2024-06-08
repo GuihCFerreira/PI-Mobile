@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorBackground"
     tools:context=".view.fragment.history.temperatura.TemperaturaHistoricoFragment">
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
         android:text="De Temperatura"
-        android:textColor="@color/white"
+        android:textColor="@color/green"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
         android:layout_marginTop="28dp"
         android:fontFamily="@font/poppins"
         android:text="Histórico"
-        android:textColor="@color/white"
+        android:textColor="@color/green"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,6 @@
         android:fontFamily="@font/poppins"
         android:textSize="12sp"
         android:textStyle="bold"
-        android:background="@drawable/bg_btn_primary"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.127"
@@ -54,7 +53,7 @@
 
     <Spinner
         android:id="@+id/spinnerTipoHistorico"
-        android:layout_width="125dp"
+        android:layout_width="140dp"
         android:background="@drawable/bg_spinner"
         android:layout_height="35dp"
         android:layout_marginTop="24dp"

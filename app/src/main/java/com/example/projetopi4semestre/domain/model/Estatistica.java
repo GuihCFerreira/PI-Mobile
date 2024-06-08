@@ -2,44 +2,44 @@ package com.example.projetopi4semestre.domain.model;
 
 public class Estatistica {
 
-   private Double media;
-   private Double mediana;
-   private Double moda;
-   private Double desvioPadrao;
-   private Double assimetria;
-   private Double previsaoFutura;
+   private String media;
+   private String mediana;
+   private String moda;
+   private String desvio_padrao;
+   private String assimetria;
+   private String previsao_futura;
 
-   public Estatistica(Double media, Double mediana, Double moda, Double desvioPadrao, Double assimetria, Double previsaoFutura) {
+   public Estatistica(String media, String mediana, String moda, String desvioPadrao, String assimetria, String previsaoFutura) {
       this.media = media;
       this.mediana = mediana;
       this.moda = moda;
-      this.desvioPadrao = desvioPadrao;
+      this.desvio_padrao = desvioPadrao;
       this.assimetria = assimetria;
-      this.previsaoFutura = previsaoFutura;
+      this.previsao_futura = previsaoFutura;
    }
 
-   public Double getMedia() {
+   public String getMedia() {
       return media;
    }
 
-   public Double getMediana() {
+   public String getMediana() {
       return mediana;
    }
 
-   public Double getModa() {
+   public String getModa() {
       return moda;
    }
 
-   public Double getDesvioPadrao() {
-      return desvioPadrao;
+   public String getDesvioPadrao() {
+      return desvio_padrao;
    }
 
-   public Double getAssimetria() {
+   public String getAssimetria() {
       return assimetria;
    }
 
-   public Double getPrevisaoFutura() {
-      return previsaoFutura;
+   public String getPrevisaoFutura() {
+      return previsao_futura;
    }
 }
 

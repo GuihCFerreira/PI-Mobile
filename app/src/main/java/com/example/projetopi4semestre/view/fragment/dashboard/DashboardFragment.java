@@ -73,6 +73,7 @@ public class DashboardFragment extends Fragment {
         binding.buttonFiltroLimpar.setOnClickListener(v -> {
             binding.edittextDataFinal.setText("");
             binding.edittextDataInicial.setText("");
+            mViewModel.getDashboard("03/03/2024","20/04/2024");
         });
 
         binding.buttonFiltroBuscar.setOnClickListener(v -> {
@@ -81,7 +82,6 @@ public class DashboardFragment extends Fragment {
             String dataFinal = binding.edittextDataFinal.getText().toString().equals("") ? "20/04/2024" : binding.edittextDataFinal.getText().toString();
 
             mViewModel.getDashboard(dataInicial, dataFinal);
-            Toast.makeText(requireActivity(), "Data inic " + binding.edittextDataInicial.getText(), Toast.LENGTH_SHORT).show();
         });
 
     }
@@ -103,19 +103,19 @@ public class DashboardFragment extends Fragment {
 
         mViewModel.getViewState().getDashboard().observe(getViewLifecycleOwner(), dashboard -> {
             if(dashboard != null) {
-                binding.tvMediaTemp.setText(dashboard.getTemperatura().getMedia().toString());
-                binding.tvMedianaTemp.setText(dashboard.getTemperatura().getMediana().toString());
-                binding.tvModaTemp.setText(dashboard.getTemperatura().getModa().toString());
-                binding.tvAssimTemp.setText(dashboard.getTemperatura().getAssimetria().toString());
-                binding.tvDesvPadraoTemp.setText(dashboard.getTemperatura().getDesvioPadrao().toString());
-                binding.tvPrevFuturaTemp.setText(dashboard.getTemperatura().getPrevisaoFutura().toString());
+                binding.tvMediaTemp.setText(dashboard.getTemperatura().getMedia());
+                binding.tvMedianaTemp.setText(dashboard.getTemperatura().getMediana());
+                binding.tvModaTemp.setText(dashboard.getTemperatura().getModa());
+                binding.tvAssimTemp.setText(dashboard.getTemperatura().getAssimetria());
+                binding.tvDesvPadraoTemp.setText(dashboard.getTemperatura().getDesvioPadrao());
+                binding.tvPrevFuturaTemp.setText(dashboard.getTemperatura().getPrevisaoFutura());
 
-                binding.tvMediaUmd.setText(dashboard.getUmidade().getMedia().toString());
-                binding.tvMedianaUmd.setText(dashboard.getUmidade().getMediana().toString());
-                binding.tvModaUmd.setText(dashboard.getUmidade().getModa().toString());
-                binding.tvAssimUmd.setText(dashboard.getUmidade().getAssimetria().toString());
-                binding.tvDesvPadraoUmd.setText(dashboard.getUmidade().getDesvioPadrao().toString());
-                binding.tvPrevFuturaUmd.setText(dashboard.getUmidade().getPrevisaoFutura().toString());
+                binding.tvMediaUmd.setText(dashboard.getUmidade().getMedia());
+                binding.tvMedianaUmd.setText(dashboard.getUmidade().getMediana());
+                binding.tvModaUmd.setText(dashboard.getUmidade().getModa());
+                binding.tvAssimUmd.setText(dashboard.getUmidade().getAssimetria());
+                binding.tvDesvPadraoUmd.setText(dashboard.getUmidade().getDesvioPadrao());
+                binding.tvPrevFuturaUmd.setText(dashboard.getUmidade().getPrevisaoFutura());
             }
         });
 
@@ -136,9 +136,10 @@ public class DashboardFragment extends Fragment {
         Integer mDay = c.get(Calendar.DAY_OF_MONTH);
         final EditText edit = edt;
 
-        DatePickerDialog dpd = new DatePickerDialog(ctx, (view, year, monthOfYear, dayOfMonth) -> edit.setText(dayOfMonth + "/"
-                + (monthOfYear + 1) + "/"
-                + year), mYear, mMonth, mDay);
+        DatePickerDialog dpd = new DatePickerDialog(ctx, (view, year, monthOfYear, dayOfMonth) ->
+                edit.setText(zero(String.valueOf(dayOfMonth),2) + "/"
+                + zero(String.valueOf((monthOfYear + 1)),2) + "/"
+                + zero(String.valueOf(year),4)), mYear, mMonth, mDay);
 
         if (fab){
             dpd.getDatePicker().setMaxDate(System.currentTimeMillis());
@@ -146,5 +147,13 @@ public class DashboardFragment extends Fragment {
         }else {
             dpd.show();
         }
+    }
+
+    public static String zero(String orig, Integer qtZeros) {
+        int qi = orig.length();
+        for (int i = qi; i < qtZeros; i++) {
+            orig = '0' + orig.trim();
+        }
+        return orig;
     }
 }

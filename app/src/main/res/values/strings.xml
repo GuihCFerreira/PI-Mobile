@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Thermomether</string>
+    <string name="app_name">Agro Guard</string>
+    <string name="app_name_bckp">Thermomether</string>
 </resources>

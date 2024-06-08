@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorBackground"
     tools:context=".view.activity.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_bottom"
-        app:itemBackground="@color/colorPrimaryDarkLight"
+        app:itemBackground="@color/colorPrimary"
         android:visibility="visible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

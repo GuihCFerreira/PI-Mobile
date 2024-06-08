@@ -2,9 +2,19 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#FF865DFF</color>
-    <color name="colorPrimaryLight">#FF865DFF</color>
+    <color name="green">#FF4F8E04</color>
+    <color name="colorBackground">#FFF6F2E9</color>
+    <color name="colorPrimary">#FFB48A40</color>
+    <color name="colorPrimaryLight">#FFB48A40</color>
     <color name="colorPrimaryDark">#FF191825</color>
     <color name="colorPrimaryDarkLight">#7F63E4</color>
     <color name="colorAcent">#FFFFA3FD</color>
+
+    <color name="black_bckp">#FF000000</color>
+    <color name="white_bckp">#FFFFFFFF</color>
+    <color name="colorPrimary_bckp">#FF865DFF</color>
+    <color name="colorPrimaryLight_bckp">#FF865DFF</color>
+    <color name="colorPrimaryDark_bckp">#FF191825</color>
+    <color name="colorPrimaryDarkLight_bckp">#7F63E4</color>
+    <color name="colorAcent_bckp">#FFFFA3FD</color>
 </resources>

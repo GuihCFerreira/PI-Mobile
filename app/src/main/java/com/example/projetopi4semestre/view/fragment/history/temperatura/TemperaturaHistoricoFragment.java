@@ -1,5 +1,6 @@
 package com.example.projetopi4semestre.view.fragment.history.temperatura;
 
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -7,6 +8,9 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,6 +26,7 @@ import com.example.projetopi4semestre.R;
 import com.example.projetopi4semestre.databinding.FragmentTemperaturaHistoricoBinding;
 import com.example.projetopi4semestre.view.adapter.historico.TemperaturaHistoricoAdapter;
 import com.example.projetopi4semestre.view.adapter.historico.UmidadeHistoricoAdapter;
+import com.example.projetopi4semestre.view.fragment.dashboard.DashboardFragment;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -42,7 +47,10 @@ public class TemperaturaHistoricoFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         binding= FragmentTemperaturaHistoricoBinding.inflate(inflater, container, false);
         mViewModel = new ViewModelProvider(this).get(TemperaturaHistoricoViewModel.class);
-        binding.buttonGoDashboard.setOnClickListener(v -> Toast.makeText(requireActivity(), "TESTE LOGIN", Toast.LENGTH_SHORT).show());
+        binding.buttonGoDashboard.setOnClickListener(v -> {
+            NavController navController = Navigation.findNavController(requireActivity(), R.id.myNavHostFragment);
+            navController.navigate(R.id.idMenuDashboard);
+        });
 
         //mViewModel.getTemperaturaHistorico();
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorBackground"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.fragment.dashboard.DashboardFragment">
 
@@ -36,8 +36,8 @@
                 android:inputType="date"
                 android:maxLength="10"
                 android:maxLines="1"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="17sp"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -53,8 +53,8 @@
                 android:maxLength="10"
                 android:maxLines="1"
                 android:textSize="17sp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
 
@@ -70,7 +70,6 @@
                 android:layout_width="120dp"
                 android:layout_height="35dp"
                 android:layout_marginBottom="5dp"
-                android:background="@drawable/bg_btn_primary"
                 android:backgroundTint="@color/colorPrimary"
                 android:fontFamily="@font/poppins"
                 android:text="Pesquisar"
@@ -82,7 +81,6 @@
                 android:id="@+id/buttonFiltroLimpar"
                 android:layout_width="120dp"
                 android:layout_height="35dp"
-                android:background="@drawable/bg_btn_white"
                 android:fontFamily="@font/poppins"
                 android:text="Limpar"
                 android:textColor="@color/black"
@@ -498,7 +496,7 @@
         android:layout_marginTop="28dp"
         android:fontFamily="@font/fira_code"
         android:text="Temperatura"
-        android:textColor="@color/white"
+        android:textColor="@color/green"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.161"
@@ -512,7 +510,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/fira_code"
         android:text="Umidade"
-        android:textColor="@color/white"
+        android:textColor="@color/green"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.138"
@@ -526,7 +524,7 @@
         android:layout_marginTop="28dp"
         android:fontFamily="@font/poppins"
         android:text="Dashboard"
-        android:textColor="@color/white"
+        android:textColor="@color/green"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -537,7 +535,6 @@
         android:id="@+id/buttonDashboard"
         android:layout_width="278dp"
         android:layout_height="50dp"
-        android:background="@drawable/bg_btn_primary"
         android:backgroundTint="@color/colorPrimary"
         android:fontFamily="@font/poppins"
         android:text="Dashboard Completo"

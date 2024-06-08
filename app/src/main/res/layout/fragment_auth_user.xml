@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorBackground"
     tools:context=".view.fragment.login.auth.AuthUserFragment">
 
 
@@ -27,7 +27,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins"
         android:text="Login"
-        android:textColor="@color/white"
+        android:textColor="@color/green"
         android:textSize="34dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.192"
@@ -38,7 +38,7 @@
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:backgroundTint="@color/colorBackground"
         android:src="@drawable/seta"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +51,6 @@
         android:backgroundTint="@color/colorPrimary"
         android:fontFamily="@font/poppins"
         android:text="Entrar"
-        android:background="@drawable/bg_btn_primary"
         android:textColor="@color/black"
         android:textSize="24dp"
         android:textStyle="bold"
@@ -66,7 +65,7 @@
         android:layout_marginTop="27dp"
         android:fontFamily="@font/fira_code"
         android:text="Digite seu email:"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.266"
@@ -80,7 +79,7 @@
         android:layout_marginTop="14dp"
         android:fontFamily="@font/fira_code"
         android:text="Digite seu senha:"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.266"
@@ -93,7 +92,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/fira_code"
         android:hint="Email"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         app:hintAnimationEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,9 +101,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editEmailLogin"
             android:layout_width="match_parent"
-            android:singleLine="true"
             android:layout_height="wrap_content"
             android:fontFamily="@font/fira_code"
+            android:singleLine="true"
+            android:textColorHighlight="@color/black"
             android:textSize="15dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,13 +113,13 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/fira_code"
         android:hint="Senha"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         app:hintAnimationEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/white">
+        app:passwordToggleTint="@color/black">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editSenhaLogin"
@@ -127,6 +127,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/fira_code"
             android:password="true"
+            android:textColorHighlight="@color/black"
             android:textSize="15dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
