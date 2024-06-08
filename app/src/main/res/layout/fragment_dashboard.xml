@@ -65,23 +65,26 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonFiltroBuscar"
                 android:layout_width="120dp"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_button"
                 android:layout_marginBottom="5dp"
                 android:backgroundTint="@color/colorPrimary"
                 android:fontFamily="@font/poppins"
                 android:text="Pesquisar"
                 android:textColor="@color/black"
                 android:textSize="10dp"
+
                 android:textStyle="bold" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonFiltroLimpar"
                 android:layout_width="120dp"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:fontFamily="@font/poppins"
+                android:background="@drawable/bg_button"
                 android:text="Limpar"
                 android:textColor="@color/black"
                 android:textSize="10dp"
@@ -531,7 +534,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonDashboard"
         android:layout_width="278dp"
         android:layout_height="50dp"

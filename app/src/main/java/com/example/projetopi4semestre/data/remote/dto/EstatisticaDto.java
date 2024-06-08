@@ -7,12 +7,12 @@ public class EstatisticaDto {
     private String media;
     private String mediana;
     private String moda;
-    private String desvio_padrao;
+    private String desvioPadrao;
     private String assimetria;
-    private String previsao_futura;
+    private String previsaoFutura;
 
     public Estatistica toModel(){
-        return new Estatistica(media, mediana, moda, desvio_padrao, assimetria, previsao_futura);
+        return new Estatistica(media, mediana, moda, desvioPadrao, assimetria, previsaoFutura);
     }
 
 }

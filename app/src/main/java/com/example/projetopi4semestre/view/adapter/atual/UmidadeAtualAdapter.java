@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.projetopi4semestre.R;
 import com.example.projetopi4semestre.databinding.AdapterUmidadeBinding;
+import com.example.projetopi4semestre.domain.model.Temperatura;
 import com.example.projetopi4semestre.domain.model.Umidade;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import java.util.List;
 public class UmidadeAtualAdapter extends RecyclerView.Adapter<UmidadeAtualAdapter.MyViewHolder> {
 
     private List<Umidade> umidadeList = new ArrayList<>();
+    public OnClick onClickListener;
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -28,6 +30,10 @@ public class UmidadeAtualAdapter extends RecyclerView.Adapter<UmidadeAtualAdapte
     @Override
     public int getItemCount() {
         return 1;
+    }
+
+    public void setOnClickListener(OnClick onClick) {
+        this.onClickListener = onClick;
     }
 
     @Override
@@ -45,12 +51,17 @@ public class UmidadeAtualAdapter extends RecyclerView.Adapter<UmidadeAtualAdapte
             holder.binding.imageViewClima.setImageResource(R.drawable.adapter_umd_raio);
             holder.binding.tvTempo.setText("Tempo úmida.");
         }
+        holder.binding.llVerHistorico.setOnClickListener(v -> onClickListener.onClick(umidade));
     }
 
     public void setUmidadeList(List<Umidade> umidadeList){
         this.umidadeList.addAll(umidadeList);
     }
 
+
+    private interface OnClick{
+        void onClick(Umidade umidade);
+    }
     class MyViewHolder extends RecyclerView.ViewHolder{
 
         private AdapterUmidadeBinding binding;

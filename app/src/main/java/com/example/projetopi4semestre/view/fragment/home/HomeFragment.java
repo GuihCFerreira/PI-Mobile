@@ -82,6 +82,8 @@ public class HomeFragment extends Fragment {
         umidadeList.add(umidade);
 
         umidadeAtualAdapter.setUmidadeList(umidadeList);
+        //umidadeAtualAdapter.setOnClickListener(umd -> {});
+
         binding.rvUmidade.setAdapter(umidadeAtualAdapter);
     }
 

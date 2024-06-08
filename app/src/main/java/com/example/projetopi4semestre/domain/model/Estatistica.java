@@ -5,17 +5,17 @@ public class Estatistica {
    private String media;
    private String mediana;
    private String moda;
-   private String desvio_padrao;
+   private String desvioPadrao;
    private String assimetria;
-   private String previsao_futura;
+   private String previsaoFutura;
 
    public Estatistica(String media, String mediana, String moda, String desvioPadrao, String assimetria, String previsaoFutura) {
       this.media = media;
       this.mediana = mediana;
       this.moda = moda;
-      this.desvio_padrao = desvioPadrao;
+      this.desvioPadrao = desvioPadrao;
       this.assimetria = assimetria;
-      this.previsao_futura = previsaoFutura;
+      this.previsaoFutura = previsaoFutura;
    }
 
    public String getMedia() {
@@ -31,7 +31,7 @@ public class Estatistica {
    }
 
    public String getDesvioPadrao() {
-      return desvio_padrao;
+      return desvioPadrao;
    }
 
    public String getAssimetria() {
@@ -39,7 +39,7 @@ public class Estatistica {
    }
 
    public String getPrevisaoFutura() {
-      return previsao_futura;
+      return previsaoFutura;
    }
 }
 

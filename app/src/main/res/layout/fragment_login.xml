@@ -43,11 +43,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonSignin"
         android:layout_width="278dp"
         android:backgroundTint="@color/colorPrimary"
         android:layout_height="50dp"
+        android:background="@drawable/bg_button"
         android:layout_marginTop="41dp"
         android:fontFamily="@font/poppins"
         android:textSize="18dp"
@@ -58,12 +59,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonCreateUser"
         android:layout_width="278dp"
         android:layout_height="50dp"
         android:layout_marginTop="17dp"
         android:text="Sign In"
+        android:background="@drawable/bg_button"
         android:textStyle="bold"
         android:fontFamily="@font/poppins"
         android:textSize="18dp"

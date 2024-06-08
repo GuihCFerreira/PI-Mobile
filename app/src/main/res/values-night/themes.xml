@@ -3,9 +3,10 @@
     <style name="Base.Theme.ProjetoPI4Semestre" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
 
-
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="android:windowBackground">@color/colorPrimaryDark</item>
         <item name="backgroundColor">@color/colorPrimaryDark</item>
+        <item name="android:statusBarColor">@color/colorBackground</item>
 
     </style>
 </resources>
