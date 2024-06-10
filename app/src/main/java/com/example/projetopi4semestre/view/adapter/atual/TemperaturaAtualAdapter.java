@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.projetopi4semestre.R;
 import com.example.projetopi4semestre.databinding.AdapterTemperaturaBinding;
 import com.example.projetopi4semestre.domain.model.Temperatura;
+import com.example.projetopi4semestre.domain.model.Umidade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,12 @@ import java.util.List;
 public class TemperaturaAtualAdapter extends RecyclerView.Adapter<TemperaturaAtualAdapter.MyViewHolder> {
 
     private List<Temperatura> temperaturaList = new ArrayList<>();
+    private OnClick onClick;
+
+    public void setOnClick(OnClick onClick) {
+        this.onClick = onClick;
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -41,10 +48,15 @@ public class TemperaturaAtualAdapter extends RecyclerView.Adapter<TemperaturaAtu
             holder.binding.tvClima.setText("Clima Quente");
             holder.binding.imageViewClima.setImageResource(R.drawable.adapter_temp_quente);
         }
+        holder.binding.llVerHistorico.setOnClickListener(v -> onClick.onClick(v, temperatura));
     }
 
     public void setTemperaturaList(List<Temperatura> temperaturaList){
         this.temperaturaList.addAll(temperaturaList);
+    }
+
+    public interface OnClick{
+        void onClick(View view, Temperatura temperatura);
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{

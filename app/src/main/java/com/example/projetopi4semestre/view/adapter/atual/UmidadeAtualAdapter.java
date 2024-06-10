@@ -18,7 +18,7 @@ import java.util.List;
 public class UmidadeAtualAdapter extends RecyclerView.Adapter<UmidadeAtualAdapter.MyViewHolder> {
 
     private List<Umidade> umidadeList = new ArrayList<>();
-    public OnClick onClickListener;
+    private OnClick onClickListener;
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -32,7 +32,7 @@ public class UmidadeAtualAdapter extends RecyclerView.Adapter<UmidadeAtualAdapte
         return 1;
     }
 
-    public void setOnClickListener(OnClick onClick) {
+    public void setOnClick(OnClick onClick) {
         this.onClickListener = onClick;
     }
 
@@ -51,7 +51,7 @@ public class UmidadeAtualAdapter extends RecyclerView.Adapter<UmidadeAtualAdapte
             holder.binding.imageViewClima.setImageResource(R.drawable.adapter_umd_raio);
             holder.binding.tvTempo.setText("Tempo úmida.");
         }
-        holder.binding.llVerHistorico.setOnClickListener(v -> onClickListener.onClick(umidade));
+        holder.binding.llVerHistorico.setOnClickListener(v -> onClickListener.onClick(v, umidade));
     }
 
     public void setUmidadeList(List<Umidade> umidadeList){
@@ -59,8 +59,8 @@ public class UmidadeAtualAdapter extends RecyclerView.Adapter<UmidadeAtualAdapte
     }
 
 
-    private interface OnClick{
-        void onClick(Umidade umidade);
+    public interface OnClick{
+        void onClick(View view, Umidade umidade);
     }
     class MyViewHolder extends RecyclerView.ViewHolder{
 

@@ -51,12 +51,12 @@ public class UserDialogFragment extends DialogFragment {
     private void eventosPadrao(){
 
         binding.buttonAlterarSenha.setOnClickListener(v ->{
-            validarCampos();
-            mViewModel.resetarSenha(
-                    preferences.getString(Strings.KEY_USER_EMAIL, ""),
-                    binding.editSenhaAtualReset.getText().toString(),
-                    binding.editSenhNovaReset.getText().toString()
-            );
+            if(!validarCampos())
+                mViewModel.resetarSenha(
+                        preferences.getString(Strings.KEY_USER_EMAIL, ""),
+                        binding.editSenhaAtualReset.getText().toString(),
+                        binding.editSenhNovaReset.getText().toString()
+                );
         });
 
         mViewModel.getViewState().getCarregando().observe(getViewLifecycleOwner(), aBoolean -> {
@@ -82,17 +82,22 @@ public class UserDialogFragment extends DialogFragment {
 
     }
 
-    private void validarCampos (){
+    private boolean validarCampos (){
 
+        boolean ret = false;
         if(binding.editSenhaAtualReset.getText().toString().equals("") ||
            binding.editSenhNovaReset.getText().toString().equals("") ||
            binding.editConfirmSenhaNovaReset.getText().toString().equals("")){
             Toast.makeText(requireActivity(), "Preencha todos os campos.", Toast.LENGTH_LONG).show();
+            ret = true;
         }
 
         if(!binding.editSenhNovaReset.getText().toString().equals(binding.editConfirmSenhaNovaReset.getText().toString())){
             Toast.makeText(requireActivity(), "As senhas não se conferem.", Toast.LENGTH_LONG).show();
+            ret = true;
         }
+
+        return ret;
     }
 
     private void salvarSharedPreferences(Usuario usuario){

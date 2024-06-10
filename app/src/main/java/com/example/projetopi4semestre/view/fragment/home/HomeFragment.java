@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -82,7 +84,11 @@ public class HomeFragment extends Fragment {
         umidadeList.add(umidade);
 
         umidadeAtualAdapter.setUmidadeList(umidadeList);
-        //umidadeAtualAdapter.setOnClickListener(umd -> {});
+
+        umidadeAtualAdapter.setOnClick((view, umd) -> {
+            NavController navController = Navigation.findNavController(requireActivity(), R.id.myNavHostFragment);
+            navController.navigate(R.id.idMenuHistory);
+        });
 
         binding.rvUmidade.setAdapter(umidadeAtualAdapter);
     }
@@ -96,6 +102,12 @@ public class HomeFragment extends Fragment {
         temperaturaList.add(temperatura);
 
         temperaturaAtualAdapter.setTemperaturaList(temperaturaList);
+
+        temperaturaAtualAdapter.setOnClick((view, tmp ) -> {
+            NavController navController = Navigation.findNavController(requireActivity(), R.id.myNavHostFragment);
+            navController.navigate(R.id.idMenuHistory);
+        });
+
         binding.rvTemperatura.setAdapter(temperaturaAtualAdapter);
     }
 
