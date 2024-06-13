@@ -25,7 +25,8 @@
 <img src="assets/image_user.jpeg"/>
 
 ## Download da aplicação
-<a href="https://drive.google.com/file/d/1pYDVrEt-J64ywBC7zPIVk_wnCveZCD07/view?usp=drive_link">Baixe o Apk </a></br>
+<a href="https://drive.google.com/file/d/1pYDVrEt-J64ywBC7zPIVk_wnCveZCD07/view?usp=drive_link">Baixe o Apk V1</a></br>
+<a href="https://drive.google.com/file/d/1v9wiIhUhdbtVNbsNEmsdcDvnIbL47f8o/view?usp=drive_link">Baixe o Apk V2</a></br>
 
 ## Desenvolvido
 <p>Todo o projeto foi desenvolvido pelos alunos: </br></p>
