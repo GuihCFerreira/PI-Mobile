@@ -20,8 +20,8 @@ public class UmidadeRepositoryImpl implements UmidadeRepository {
     }
 
     @Override
-    public Call<UmidadeDto> getUmidadeAtual() {
-        return umidadeService.getUmidadeAtual();
+    public Call<UmidadeDto> getUmidadeAtual(boolean latest) {
+        return umidadeService.getUmidadeAtual(latest);
     }
 
     @Override

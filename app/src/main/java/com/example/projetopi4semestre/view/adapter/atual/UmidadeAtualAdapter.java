@@ -39,8 +39,9 @@ public class UmidadeAtualAdapter extends RecyclerView.Adapter<UmidadeAtualAdapte
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Umidade umidade = umidadeList.get(position);
-        holder.binding.tvUmidade.setText(umidade.getUmidade() + " " + umidade.getUnidadeMedida());
-        Float umd = Float.valueOf(umidade.getUmidade());
+        holder.binding.tvUmidade.setText(umidade.getUmidade());
+        String valorUmd = umidade.getUmidade().replaceAll("[^\\d.]", "");
+        Float umd = Float.valueOf(valorUmd);
         if (umd < 40.0){
             holder.binding.imageViewClima.setImageResource(R.drawable.adapter_umd_sol);
             holder.binding.tvTempo.setText("Tempo seco.");

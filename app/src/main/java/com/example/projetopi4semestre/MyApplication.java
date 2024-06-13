@@ -23,7 +23,7 @@ public class MyApplication extends Application {
         return apiUrl;
     }
 
-    private static final String BASE_URL = "https://teste-q43i.onrender.com/";
+    private static final String BASE_URL = "https://backendt-pi-quarto-semestre-v2.onrender.com/v1/";
 
     public static Context getAppContext() {
         return context;

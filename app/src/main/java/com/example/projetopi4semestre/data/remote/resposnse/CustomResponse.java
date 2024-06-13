@@ -3,15 +3,15 @@ package com.example.projetopi4semestre.data.remote.resposnse;
 public class CustomResponse {
 
     private int codigo;
-    private String mensagem;
+    private String message;
 
     public CustomResponse(int codigo, String mensagem) {
         this.codigo = codigo;
-        this.mensagem = mensagem;
+        this.message = mensagem;
     }
 
     public CustomResponse(String mensagem) {
-        this.mensagem = mensagem;
+        this.message = mensagem;
     }
 
     public int getCodigo() {
@@ -19,11 +19,11 @@ public class CustomResponse {
     }
 
     public String getMensagem() {
-        return mensagem;
+        return message;
     }
 
     public void setMensagem(String mensagem) {
-        this.mensagem = mensagem;
+        this.message = mensagem;
     }
 
 }

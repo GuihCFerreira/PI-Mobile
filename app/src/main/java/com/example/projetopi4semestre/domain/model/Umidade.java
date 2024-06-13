@@ -28,11 +28,9 @@ public class Umidade {
         return criado;
     }
 
-    public Umidade(String umidade, String unidadeMedida, String data, String hora, String criado) {
+    public Umidade(String umidade,String data, String hora) {
         this.umidade = umidade;
-        this.unidadeMedida = unidadeMedida;
         this.data = data;
         this.hora = hora;
-        this.criado = criado;
     }
 }

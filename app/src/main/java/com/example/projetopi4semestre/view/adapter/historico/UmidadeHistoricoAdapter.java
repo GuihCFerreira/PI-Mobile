@@ -30,7 +30,6 @@ public class UmidadeHistoricoAdapter extends RecyclerView.Adapter<UmidadeHistori
         holder.binding.tvHistData.setText(temp.getData());
         holder.binding.tvHistHora.setText(temp.getHora());
         holder.binding.tVHistValor.setText(temp.getUmidade());
-        holder.binding.tVHistMedida.setText(temp.getUnidadeMedida());
     }
 
     @Override

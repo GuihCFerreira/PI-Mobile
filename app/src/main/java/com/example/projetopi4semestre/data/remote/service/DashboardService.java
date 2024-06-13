@@ -9,11 +9,11 @@ import retrofit2.http.Query;
 
 public interface DashboardService {
 
-    String ENDPOINT_DASHBOARD  = "dashboard";
+    String ENDPOINT_DASHBOARD  = "summary";
 
     @GET(ENDPOINT_DASHBOARD)
     Call<DashboardDto> getDashboard(
-            @Query("dataInicial") String dataInicial,
-            @Query("dataFinal") String dataFinal
+            @Query("date_greater") String dataInicial,
+            @Query("date_lesser") String dataFinal
     );
 }

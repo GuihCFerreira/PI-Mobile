@@ -27,11 +27,11 @@ public class HomeViewModel extends ViewModel {
     }
 
     public void getValoresAtuais(){
-        getUmidadeAtual();
-        getTemperaturaAtual();
+        getUmidadeAtual(true);
+        getTemperaturaAtual(true);
     }
 
-    private void getUmidadeAtual(){
+    private void getUmidadeAtual(boolean latest){
         umidadeAtualUseCase.setRequestCallback(new RequestCallback<Umidade>() {
             @Override
             public void carregando(boolean carregando) {
@@ -49,10 +49,10 @@ public class HomeViewModel extends ViewModel {
             }
         });
 
-        umidadeAtualUseCase.getUmidadeAtual();
+        umidadeAtualUseCase.getUmidadeAtual(latest);
     }
 
-    private void getTemperaturaAtual(){
+    private void getTemperaturaAtual(boolean latest){
         temperaturaAtualUseCase.setRequestCallback(new RequestCallback<Temperatura>() {
             @Override
             public void carregando(boolean carregando) {
@@ -70,7 +70,7 @@ public class HomeViewModel extends ViewModel {
             }
         });
 
-        temperaturaAtualUseCase.getTemperaturaAtual();
+        temperaturaAtualUseCase.getTemperaturaAtual(latest);
     }
 
     public HomeViewState getViewState() {

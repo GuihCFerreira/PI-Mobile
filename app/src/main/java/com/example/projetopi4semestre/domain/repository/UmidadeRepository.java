@@ -8,6 +8,6 @@ import retrofit2.Call;
 
 public interface UmidadeRepository {
 
-    Call<UmidadeDto> getUmidadeAtual();
+    Call<UmidadeDto> getUmidadeAtual(boolean latest);
     Call<List<UmidadeDto>> getUmidadeHistorico();
 }

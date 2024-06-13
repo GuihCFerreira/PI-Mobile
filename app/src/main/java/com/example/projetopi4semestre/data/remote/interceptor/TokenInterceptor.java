@@ -47,7 +47,7 @@ public class TokenInterceptor implements Interceptor {
             request = originalRequest;
         } else {
             request = originalRequest.newBuilder()
-                    .header("Authorization", token)
+                    .header("Authorization", "Bearer " + token)
                     .build();
         }
 

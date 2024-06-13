@@ -30,7 +30,6 @@ public class TemperaturaHistoricoAdapter extends RecyclerView.Adapter<Temperatur
         holder.binding.tvHistData.setText(temp.getData());
         holder.binding.tvHistHora.setText(temp.getHora());
         holder.binding.tVHistValor.setText(temp.getTemperatura());
-        holder.binding.tVHistMedida.setText("º"+temp.getUnidadeMedida());
     }
 
     @Override

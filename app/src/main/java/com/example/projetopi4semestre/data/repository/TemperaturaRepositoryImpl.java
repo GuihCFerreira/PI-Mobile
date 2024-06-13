@@ -20,8 +20,8 @@ public class TemperaturaRepositoryImpl implements TemperaturaRepository {
     }
 
     @Override
-    public Call<TemperaturaDto> getTemperturaAtual() {
-        return temperaturaService.getTemperaturaAtual();
+    public Call<TemperaturaDto> getTemperturaAtual(boolean latest) {
+        return temperaturaService.getTemperaturaAtual(latest);
     }
 
     @Override

@@ -8,6 +8,6 @@ import retrofit2.Call;
 
 public interface TemperaturaRepository {
 
-    Call<TemperaturaDto> getTemperturaAtual();
+    Call<TemperaturaDto> getTemperturaAtual(boolean latest);
     Call<List<TemperaturaDto>> getTemperaturaHistorico();
 }

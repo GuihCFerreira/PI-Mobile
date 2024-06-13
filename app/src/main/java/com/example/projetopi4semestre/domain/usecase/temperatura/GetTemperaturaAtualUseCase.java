@@ -20,9 +20,9 @@ public class GetTemperaturaAtualUseCase {
         this.temperaturaRepository = temperaturaRepository;
     }
 
-    public void getTemperaturaAtual(){
+    public void getTemperaturaAtual(boolean latest){
         //requestCallback.carregando(true);
-        temperaturaRepository.getTemperturaAtual().enqueue(new CustomCallback<>(new UseCaseCallback<TemperaturaDto>() {
+        temperaturaRepository.getTemperturaAtual(latest).enqueue(new CustomCallback<>(new UseCaseCallback<TemperaturaDto>() {
             @Override
             public void onSuccess(TemperaturaDto response) {
                 requestCallback.carregando(false);
